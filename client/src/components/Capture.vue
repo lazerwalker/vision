@@ -30,10 +30,10 @@
             <div v-if="interval != null">Click Spacebar to Stop!</div>
         </div>
         <div id="images">
-            <video id="video" width="320" height="240" autoplay></video>
+            <video id="video" @click="predict()" width="320" height="240" autoplay></video>
             <canvas id="rendered" width="224" height="224"></canvas>
             <canvas id="canvas" width="320" height="240"></canvas>
-            <!--div id="output">
+            <!div id="output">
                 <div id="flavor" v-if="modelmeta != null">Type: {{modelmeta.Flavor}}</div>
                 <div id="exported" v-if="modelmeta != null">Exported: {{modelmeta.ExportedDate}}</div>
                 <div id="current">{{guess}}</div>
@@ -42,7 +42,7 @@
                         <li :key="idx" v-for="(pitem, idx) in probabilities">{{pitem.label}}: {{pitem.probability.toFixed(2)}}%</li>
                     </ul>
                 </div>
-            </div-->
+            </div>
         </div>
         <div id="listOPics" v-if="list.length > 0">
             <div>Click on an image to remove (or <button type="button" v-on:click="clearImages()">Clear All</button>)</div>
@@ -121,7 +121,7 @@
             console.log(this.appSettings)
 
             // load model
-            //await this.loadModel()
+            await this.loadModel()
             
         },
         methods: {
