@@ -1,4 +1,4 @@
 {
-    "saveEndpoint": "http://localhost:7071/api/save",
-    "maxSubmitCount": 4
+  "saveEndpoint": "https://facetoucherfuncapp.azurewebsites.net/api/save",
+  "maxSubmitCount": 4
 }
