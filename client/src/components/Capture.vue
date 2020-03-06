@@ -33,7 +33,7 @@
             <video id="video" @click="predict()" width="320" height="240" autoplay></video>
             <canvas id="rendered" width="224" height="224"></canvas>
             <canvas id="canvas" width="320" height="240"></canvas>
-            <!div id="output">
+            <div id="output">
                 <div id="flavor" v-if="modelmeta != null">Type: {{modelmeta.Flavor}}</div>
                 <div id="exported" v-if="modelmeta != null">Exported: {{modelmeta.ExportedDate}}</div>
                 <div id="current">{{guess}}</div>
