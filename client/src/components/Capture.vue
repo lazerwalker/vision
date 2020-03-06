@@ -1,15 +1,20 @@
 <template>
     <div>
         <div id="instructions">
-            <p><strong>Capture Instructions</strong></p>
+        <p><strong>Thanks for helping train my face-touching app!</strong>
+        To make my "don't touch your face" app work better, I need more training data of people sitting at their webcams. That's where you come in!</p>
+        </p>
+            <p><strong>Capturing Data</strong></p>
             <ol>
-                <li>Select desired gesture</li>
+                <li>Select what type of video footage you want to capture (ideally do all three!)</li>
                 <li>Get into position!</li>
-                <li>Spacebar to start</li>
+                <li>Press the spacebar to start capturing video footage</li>
             </ol>
-            <p><strong>Training Instructions</strong></p>
-            <p>Once you uploaded a balanced set of pictures for each category
-                head over to <a href="customvision.ai">customvision</a> to train and download the model</p>
+            <p><strong>Sorting and Uploading Data</strong></p>
+            <p>After you've recorded video for all three states (you're touching your face, you're not touching your face, you're not in-frame at all), you'll see what photos are going to be sent to the server.</p>
+            <p>Please delete the ones that are a bit ambiguous, then click "Submit Training Data" to upload those photos.</p>
+            <p><a href="https://twitter.com/lazerwalker">I</a> am the only person who will be able to view these photos, and I will delete them as soon as the model has been sufficiently trained.</p>
+            <p><strong>Thanks so much!!!</strong></p>
         </div>
         <div id="radioselection">
             <span :key="item+index" v-for="(item, index) in labels">
@@ -74,7 +79,7 @@
                 interval: null,
                 model: null,
                 modelmeta: null,
-                labels: ['none', 'rock', 'paper', 'scissors'],
+                labels: ['touching face', 'not touching face', 'no face present'],
                 modelLabels: [],
                 probabilities: [],
                 guess: 'none',
