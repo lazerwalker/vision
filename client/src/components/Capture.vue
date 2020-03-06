@@ -1,19 +1,22 @@
 <template>
     <div>
         <div id="instructions">
-        <p><strong>Thanks for helping train my face-touching app!</strong>
+        <p><strong>Thanks for helping train my face-touching app!</strong><br/>
         To make my "don't touch your face" app work better, I need more training data of people sitting at their webcams. That's where you come in!</p>
+        <p>I'll be asking you to record some webcam footage of you (a) touching your face, (b) not touching your face, and (c) not in the webcam frame at all. These will be turned into a series of static photos you can browse before uploading them to me.</p>
         </p>
             <p><strong>Capturing Data</strong></p>
             <ol>
-                <li>Select what type of video footage you want to capture (ideally do all three!)</li>
+                <li>Select what type of video footage you want to capture</li>
                 <li>Get into position!</li>
                 <li>Press the spacebar to start capturing video footage</li>
+                <li>Press spacebar when you're done (after a few seconds, at least)</li>
+                <li>Repeat until you've captured all three types of data!</li>
             </ol>
             <p><strong>Sorting and Uploading Data</strong></p>
-            <p>After you've recorded video for all three states (you're touching your face, you're not touching your face, you're not in-frame at all), you'll see what photos are going to be sent to the server.</p>
-            <p>Please delete the ones that are a bit ambiguous, then click "Submit Training Data" to upload those photos.</p>
-            <p><a href="https://twitter.com/lazerwalker">I</a> am the only person who will be able to view these photos, and I will delete them as soon as the model has been sufficiently trained.</p>
+            <p>After you've recorded video for all three states, you'll see what photos are going to be sent to the server.</p>
+            <p>Please delete the ones that are a bit ambiguous (i.e. if there are "touching face" frames where you're not actually touching your face), then click "Submit Training Data" to upload those photos.</p>
+            <p>I (<a href="https://twitter.com/lazerwalker">Em Lazer-Walker</a>) am the only person who will be able to view these photos, and I will delete them as soon as the model has been sufficiently trained.</p>
             <p><strong>Thanks so much!!!</strong></p>
         </div>
         <div id="radioselection">
@@ -27,10 +30,10 @@
             <div v-if="interval != null">Click Spacebar to Stop!</div>
         </div>
         <div id="images">
-            <video @click="predict()" id="video" width="320" height="240" autoplay></video>
+            <video id="video" width="320" height="240" autoplay></video>
             <canvas id="rendered" width="224" height="224"></canvas>
             <canvas id="canvas" width="320" height="240"></canvas>
-            <div id="output">
+            <!--div id="output">
                 <div id="flavor" v-if="modelmeta != null">Type: {{modelmeta.Flavor}}</div>
                 <div id="exported" v-if="modelmeta != null">Exported: {{modelmeta.ExportedDate}}</div>
                 <div id="current">{{guess}}</div>
@@ -39,7 +42,7 @@
                         <li :key="idx" v-for="(pitem, idx) in probabilities">{{pitem.label}}: {{pitem.probability.toFixed(2)}}%</li>
                     </ul>
                 </div>
-            </div>
+            </div-->
         </div>
         <div id="listOPics" v-if="list.length > 0">
             <div>Click on an image to remove (or <button type="button" v-on:click="clearImages()">Clear All</button>)</div>
@@ -118,7 +121,7 @@
             console.log(this.appSettings)
 
             // load model
-            await this.loadModel()
+            //await this.loadModel()
             
         },
         methods: {
