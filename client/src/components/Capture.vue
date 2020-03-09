@@ -10,12 +10,14 @@
                 <li>Select what type of video footage you want to capture</li>
                 <li>Get into position!</li>
                 <li>Press the spacebar to start capturing video footage</li>
+                <li>Be sure to look in different directions, move your head a bit, and touch your face in different ways with each hand</li>
                 <li>Press spacebar when you're done (after a few seconds, at least)</li>
                 <li>Repeat until you've captured all three types of data!</li>
             </ol>
             <p><strong>Sorting and Uploading Data</strong></p>
             <p>After you've recorded video for all three states, you'll see what photos are going to be sent to the server.</p>
             <p>Please delete the ones that are a bit ambiguous (i.e. if there are "touching face" frames where you're not actually touching your face), then click "Submit Training Data" to upload those photos.</p>
+            <p>A "sending data" indicator on the right-hand side of the screen should show up. When that disappears, and the images are gone from the list, it's submitted successfully!</p>
             <p>I (<a href="https://twitter.com/lazerwalker">Em Lazer-Walker</a>) am the only person who will be able to view these photos, and I will delete them as soon as the model has been sufficiently trained.</p>
             <p><strong>Thanks so much!!!</strong></p>
         </div>
