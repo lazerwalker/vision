@@ -25,7 +25,7 @@ projectId = os.environ["ProjectId"]
 tags = {}
 
 def check_tags(trainer: CustomVisionTrainingClient) -> None:
-    t = ['touching face', 'not touching face', 'no face present']
+    t = ['touching-face', 'not-touching-face', 'no-face-present']
     etags = { t.name: t for t in trainer.get_tags(projectId) }
     for tag in t:
         if tag in etags:

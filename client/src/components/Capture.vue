@@ -84,7 +84,7 @@
                 interval: null,
                 model: null,
                 modelmeta: null,
-                labels: ['touching face', 'not touching face', 'no face present'],
+                labels: ['touching-face', 'not-touching-face', 'no-face-present'],
                 modelLabels: [],
                 probabilities: [],
                 guess: 'none',
